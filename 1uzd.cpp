@@ -26,6 +26,21 @@ int main() {
     cout << static_cast<int>(c) % 5 + a - b << endl;
     cout << 13.5 / 4.0 * 3.5 + 18 << endl;*/
 
+    /*int a, b, c, d, e;
+    double Vidurkis;
+    Vidurks = (a +b + c + d + e) / 5;
+    cout << "Vidurkis " << Vidurkis << endl;
+    */
+
+    /*int Skaicius;
+    int a, b, Suma;
+    cout << "Iveskite dvizenkli skaiciu" << endl;
+    cin >> Skaicius;
+    a = Skaicius / 10;
+    b = Skaicius % 10;
+    Suma = a + b;
+    cout << "Jusu dvizenklio skaiciaus suma: " << Suma << endl;*/
+
     return 0;
 
 }
