@@ -4,7 +4,7 @@ int main() {
 
     int ivertinimas[11] = {0};
     int i = 0, a;
-    while (i != 10) {
+    while (i != 40) {
         cout << "Iveskite ivertinima zaidimo nuo 1 iki 10: " << endl;
         cin >> a;
         if (a > 0 || a < 10) {
