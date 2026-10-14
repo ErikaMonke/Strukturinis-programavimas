@@ -1,8 +1,10 @@
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
 int main(){
+    cout << fixed << setprecision(2);
     int pasirinkimas;
     double eur = 0, suma = 0;
     const double GBP_Bendras = 0.8729, GBP_Pirkti  = 0.8600, GBP_Parduoti = 0.9220;
@@ -114,7 +116,7 @@ int main(){
         case 3:
             cout << "Iveskite INR kiekį: " << endl;
             cin >> eur;
-            
+
             if (eur <= 0) {
                 cout << "Klaida! Suma turi buti didesnė už nulį." << endl;
                 break;
