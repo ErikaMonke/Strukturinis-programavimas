@@ -4,6 +4,7 @@
 using namespace std;
 
 int main(){
+    system( "chcp 65001 > nul");
     cout << fixed << setprecision(2);
     int pasirinkimas;
     double eur = 0, suma = 0;
@@ -13,13 +14,14 @@ int main(){
 
     cout << "Sveiki, čia yra programa kuri leidžia palyginti valiutų kursus su euru, pirkti pasirinktą valiutą už eurus ir parduoti pasirinktą valiutą už eurus." << endl;
     cout << "Įrašykite skaičių: " << endl;
-    cout << "1 - palyginti valiutų kursus su euru." << endl;
-    cout << "2 - pirkti pasirinktą valiutą už eurus." << endl;
-    cout << "3 - parduoti pasirinktą valiutą už eurus." << endl;
-    cout << "4 - išeiti iš programos" << endl;
-    cin >> pasirinkimas;
 
-    switch (pasirinkimas) {
+    while (pasirinkimas != 4) {
+        cout << "1 - palyginti valiutų kursus su euru." << endl;
+        cout << "2 - pirkti pasirinktą valiutą už eurus." << endl;
+        cout << "3 - parduoti pasirinktą valiutą už eurus." << endl;
+        cout << "4 - išeiti iš programos" << endl;
+        cin >> pasirinkimas;
+        switch (pasirinkimas) {
 
     case 1: {
 
@@ -30,13 +32,13 @@ int main(){
                 cout << "Klaida! Suma turi būti didesnė už nulį." << endl;
                 break;
             }
-        double EUR_GBP = eur * GBP_Bendras;
-        double EUR_USD = eur * USD_Bendras;
-        double EUR_INR = eur * INR_Bendras;
-        cout << "Eurai konvertuoti į kitas valiutas: " << endl;
-        cout << eur << " Eur - " << EUR_GBP << " GBP" << endl;
-        cout << eur << " Eur - " << EUR_USD << " USD" << endl;
-        cout << eur << " Eur - " << EUR_INR << " INR" << endl;
+            double EUR_GBP = eur * GBP_Bendras;
+            double EUR_USD = eur * USD_Bendras;
+            double EUR_INR = eur * INR_Bendras;
+            cout << "Eurai konvertuoti į kitas valiutas: " << endl;
+            cout << eur << " Eur - " << EUR_GBP << " GBP" << endl;
+            cout << eur << " Eur - " << EUR_USD << " USD" << endl;
+            cout << eur << " Eur - " << EUR_INR << " INR" << endl;
         break;
     }
 
@@ -54,7 +56,7 @@ int main(){
                 break;
             }
             suma = eur * GBP_Pirkti;
-            cout << "Jūs nupirkote - " << suma << " GBP" << " uz " << eur << "Eur" << endl;
+            cout << "Jūs nupirkote - " << suma << " GBP" << " už " << eur << "Eur" << endl;
             break;
         case 2:
             cout << "Iveskite eurų kiekį: " << endl;
@@ -64,7 +66,7 @@ int main(){
                 break;
             }
             suma = eur * USD_Pirkti;
-            cout << "Jūs nupirkote - " << suma << " USD" << " uz " << eur << "Eur" << endl;
+            cout << "Jūs nupirkote - " << suma << " USD" << " už " << eur << "Eur" << endl;
             break;
         case 3:
             cout << "Iveskite eurų kiekį: " << endl;
@@ -74,7 +76,7 @@ int main(){
                 break;
             }
             suma = eur * INR_Pirkti;
-            cout << "Jūs nupirkote - " << suma << " INR" << " uz " << eur << "Eur" << endl;
+            cout << "Jūs nupirkote - " << suma << " INR" << " už " << eur << "Eur" << endl;
             break;
         default:
             cout << "Neteisingas valiutos pasirinkimas.\n";
@@ -137,6 +139,6 @@ int main(){
     default:
     cout << "Netinkamas formatas. Pradėkite iš naujo." << endl;
     }
-    cout << "Programa baigia veikti. Viso gero :)" << endl;
+    }
     return 0;
 }
