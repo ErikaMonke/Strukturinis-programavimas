@@ -54,7 +54,7 @@ int main(){
                 break;
             }
             suma = eur * GBP_Pirkti;
-            cout << "Jūs nupirkote - " << suma << " GBP" << endl;
+            cout << "Jūs nupirkote - " << suma << " GBP" << " uz " << eur << "Eur" << endl;
             break;
         case 2:
             cout << "Iveskite eurų kiekį: " << endl;
@@ -64,7 +64,7 @@ int main(){
                 break;
             }
             suma = eur * USD_Pirkti;
-            cout << "Jūs nupirkote - " << suma << " USD" << endl;
+            cout << "Jūs nupirkote - " << suma << " USD" << " uz " << eur << "Eur" << endl;
             break;
         case 3:
             cout << "Iveskite eurų kiekį: " << endl;
@@ -74,7 +74,7 @@ int main(){
                 break;
             }
             suma = eur * INR_Pirkti;
-            cout << "Jūs nupirkote - " << suma << " INR" << endl;
+            cout << "Jūs nupirkote - " << suma << " INR" << " uz " << eur << "Eur" << endl;
             break;
         default:
             cout << "Neteisingas valiutos pasirinkimas.\n";
