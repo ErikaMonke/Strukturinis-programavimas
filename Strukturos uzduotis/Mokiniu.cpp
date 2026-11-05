@@ -11,7 +11,7 @@ struct Mokinys{
 int main() {
 
     double Suma = 0;
-    Mokinys mokinys[2];
+    Mokinys mokinys[3];
     cout << "Si programa leidzia ivesti mokinio varda, amziu ir pazymi. Taip pat apskaiciuoju ju vidurkius" << endl;
 
         cout << "Iveskite pirmo mokinio varda: "  << endl;
@@ -34,7 +34,7 @@ int main() {
     cin >> mokinys[2].amzius;
     cout << "Iveskite trecio mokinio pazymi: " << endl;
     cin >> mokinys[2].pazymys;
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 3; i++) {
         Suma += mokinys[i].pazymys;
     }
 
