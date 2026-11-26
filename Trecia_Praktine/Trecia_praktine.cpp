@@ -279,15 +279,16 @@ void IsvestiPrekes(ostream& isvestis, const string kategorijos[], const string p
     int rastuPrekiu = 0;
     isvestis << fixed << setprecision(2);
     // setw sulygiuoja lentele, o fixed ir setprecision(2) rodo kainas dviem skaitmenimis po kablelio.
-    isvestis << "\n"
-             << left << setw(15) << "Kategorija"
-             << setw(48) << "Prekes pavadinimas"
-             << right << setw(12) << "Kaina (Eur)"
-             << setw(8) << "Kiekis"
-             << setw(16) << "Suma (Eur)"
-             << setw(14) << "Nuolaida (Eur)"
-             << setw(16) << "Moketina (Eur)" << endl;
-    isvestis << string(129, '-') << endl;
+    isvestis << " " << string(151, '-');
+    isvestis << "\n" << " | "
+             << left << setw(15) << "Kategorija" << " | "
+             << setw(48) << "Prekes pavadinimas" << " | "
+             << right << setw(12) << "Kaina (Eur)" << " | "
+             << setw(8) << "Kiekis" << " | "
+             << setw(16) << "Suma (Eur)" << " | "
+             << setw(14) << "Nuolaida (Eur)" << " | "
+             << setw(16) << "Moketina (Eur)"  << " | " << endl;
+    isvestis << " " << string(151, '-') << endl;
 
     // Tuscias filtras reiskia visas prekes; kitu atveju praleidziamos kitoms kategorijoms priklausancios prekes.
     for (int i = 0; i < prekiuSkaicius; ++i) {
@@ -296,16 +297,17 @@ void IsvestiPrekes(ostream& isvestis, const string kategorijos[], const string p
             // Moketina eilutes suma lygi kainai * kiekiui minus tai eilutei pritaikyta nuolaida.
             double eilutesSuma = EilutesSuma(kainos[i], kiekiai[i]);
             double nuolaida = Nuolaida(eilutesSuma, kiekiai[i]);
-            isvestis << left << setw(15) << kategorijos[i]
-                     << setw(48) << pavadinimai[i]
-                     << right << setw(12) << kainos[i]
-                     << setw(8) << kiekiai[i]
-                     << setw(16) << eilutesSuma
-                     << setw(14) << nuolaida
-                     << setw(16) << eilutesSuma - nuolaida << endl;
+            isvestis  << " | " << left << setw(15) << kategorijos[i]  << " | "
+                     << setw(48) << pavadinimai[i]  << " | "
+                     << right << setw(12) << kainos[i]  << " | "
+                     << setw(8) << kiekiai[i]  << " | "
+                     << setw(16) << eilutesSuma  << " | "
+                     << setw(14) << nuolaida  << " | "
+                     << setw(16) << eilutesSuma - nuolaida  << " | " << endl;
             ++rastuPrekiu;
         }
     }
+    isvestis << " " << string(151, '-') << endl;
 
     if (rastuPrekiu == 0) {
         isvestis << "Kategorijoje \"" << filtruojamaKategorija << "\" prekiu nera." << endl;
